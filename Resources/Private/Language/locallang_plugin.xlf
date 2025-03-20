@@ -61,6 +61,15 @@
 			<trans-unit id="flexform.field.aside-media-size.small">
 				<source>Small</source>
 			</trans-unit>
+			<trans-unit id="flexform.field.text-alignment">
+				<source>Text Alignment</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.text-alignment.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.text-alignment.center">
+				<source>Center</source>
+			</trans-unit>
 			<trans-unit id="flexform.field.subpages-enabled">
 				<source>Show subpages</source>
 			</trans-unit>
