@@ -176,7 +176,7 @@ class Page extends \Ps14\Foundation\Domain\Model\Page {
 			$link = $contentObject->typoLink_URL(['parameter' => $this->url]);
 
 		} else {
-			$link = $contentObject->typoLink_URL(['parameter' => $this->uid])->getUrl();
+			$link = $contentObject->typoLink_URL(['parameter' => $this->uid]);
 		}
 
 		return $link;
