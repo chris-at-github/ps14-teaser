@@ -8,6 +8,8 @@ namespace Ps14\Teaser\Domain\Model;
 use \Ps14\Foundation\Domain\Model\Category;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+use TYPO3\CMS\Frontend\Typolink\PageLinkBuilder;
 
 /**
  * This file is part of the "Ps14 Teaser" Extension for TYPO3 CMS.
@@ -49,6 +51,11 @@ class Page extends \Ps14\Foundation\Domain\Model\Page {
 	 * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
 	 */
 	protected $teaserMediaLarge = null;
+
+	/**
+	 * @var string
+	 */
+	protected $url = '';
 
 	/**
 	 * Returns the abstractLong
@@ -151,5 +158,27 @@ class Page extends \Ps14\Foundation\Domain\Model\Page {
 
 	public function setTeaserMediaLarge(?\TYPO3\CMS\Extbase\Domain\Model\FileReference $teaserMediaLarge): void {
 		$this->teaserMediaLarge = $teaserMediaLarge;
+	}
+
+	public function getUrl(): string {
+		return $this->url;
+	}
+
+	public function setUrl(string $url): void {
+		$this->url = $url;
+	}
+
+	public function getLink(): string {
+		$contentObject = GeneralUtility::makeInstance(ContentObjectRenderer::class);
+		$pageLinkBuilder = GeneralUtility::makeInstance(PageLinkBuilder::class, $contentObject);
+
+		if(empty($this->url) === false) {
+			$link = $contentObject->typoLink_URL(['parameter' => $this->url]);
+
+		} else {
+			$link = $contentObject->typoLink_URL(['parameter' => $this->uid])->getUrl();
+		}
+
+		return $link;
 	}
 }

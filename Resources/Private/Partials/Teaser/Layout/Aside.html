@@ -38,7 +38,7 @@
 
 <f:section name="MediaContainer">
 	<f:if condition="{page.linkable}">
-		<f:then><f:link.page pageUid="{page.uid}" class="teaser--media" tabindex="-1"><f:render section="Media" arguments="{page: page, settings: settings}" /></f:link.page></f:then>
+		<f:then><a href="{page.link}" class="teaser--media" tabindex="-1"><f:render section="Media" arguments="{page: page, settings: settings}" /></a></f:then>
 		<f:else><div class="teaser--media"><f:render section="Media" arguments="{page: page, settings: settings}" /></div></f:else>
 	</f:if>
 </f:section>
@@ -76,7 +76,7 @@
 
 <f:section name="Title">
 	<f:if condition="{page.linkable}">
-		<f:then><f:link.page pageUid="{page.uid}">{page.teaserTitle}</f:link.page></f:then>
+		<f:then><a href="{page.link}">{page.teaserTitle}</a></f:then>
 		<f:else>{page.teaserTitle}</f:else>
 	</f:if>
 </f:section>
@@ -94,7 +94,7 @@
 
 <f:section name="Readmore">
 	<f:if condition="{page.linkable}">
-		<f:link.page class="link--cta teaser--readmore" pageUid="{page.uid}" tabindex="-1">{page.teaserReadmore}</f:link.page>
+		<a class="link--cta teaser--readmore" href="{page.link}" tabindex="-1">{page.teaserReadmore}</a>
 	</f:if>
 </f:section>
 
