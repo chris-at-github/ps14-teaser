@@ -94,6 +94,11 @@ plugin.tx_ps14teaser {
 				right = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-alignment.right
 			}
 
+			asideMediaSize {
+				default = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-media-size.default
+				small = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-media-size.small
+			}
+
 			subpagesLayout {
 				default = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpages-layout.default
 				columns = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpages-layout.columns

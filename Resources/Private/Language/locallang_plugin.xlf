@@ -52,6 +52,15 @@
 			<trans-unit id="flexform.field.aside-alignment.right">
 				<source>Text | Media</source>
 			</trans-unit>
+			<trans-unit id="flexform.field.aside-media-size">
+				<source>Media Size</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.aside-media-size.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.aside-media-size.small">
+				<source>Small</source>
+			</trans-unit>
 			<trans-unit id="flexform.field.subpages-enabled">
 				<source>Show subpages</source>
 			</trans-unit>

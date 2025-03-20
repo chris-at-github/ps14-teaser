@@ -22,18 +22,36 @@
 </f:section>
 
 <f:section name="Item">
-	<div class="col-12 col-md-5">
-		<f:render section="MediaContainer" arguments="{page: page, settings: settings.media.aside}" />
-	</div>
+	<f:if condition="{settings.asideMediaSize} == 'small'">
+		<f:then>
+			<div class="col-12 col-md-4">
+				<f:render section="MediaContainer" arguments="{page: page, settings: settings.media.aside}" />
+			</div>
 
-	<div class="col-12 col-md-7">
-		<div class="teaser--body">
-			<f:render section="Header" arguments="{_all}" />
-			<f:render section="Abstract" arguments="{_all}" />
-			<f:render section="Readmore" arguments="{_all}" />
-			<f:render section="Subpages" arguments="{_all}" />
-		</div>
-	</div>
+			<div class="col-12 col-md-8">
+				<div class="teaser--body">
+					<f:render section="Header" arguments="{_all}" />
+					<f:render section="Abstract" arguments="{_all}" />
+					<f:render section="Readmore" arguments="{_all}" />
+					<f:render section="Subpages" arguments="{_all}" />
+				</div>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="col-12 col-md-5">
+				<f:render section="MediaContainer" arguments="{page: page, settings: settings.media.aside}" />
+			</div>
+
+			<div class="col-12 col-md-7">
+				<div class="teaser--body">
+					<f:render section="Header" arguments="{_all}" />
+					<f:render section="Abstract" arguments="{_all}" />
+					<f:render section="Readmore" arguments="{_all}" />
+					<f:render section="Subpages" arguments="{_all}" />
+				</div>
+			</div>
+		</f:else>
+	</f:if>
 </f:section>
 
 <f:section name="MediaContainer">

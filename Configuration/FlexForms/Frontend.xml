@@ -115,6 +115,21 @@
 							</config>
 						</TCEforms>
 					</settings.asideAlignment>
+					<settings.asideMediaSize>
+						<TCEforms>
+							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-media-size</label>
+							<displayCond>FIELD:main.settings.layout:=:aside</displayCond>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<itemsProcFunc>Ps14\Foundation\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<extension>Ps14Teaser</extension>
+									<identifier>plugin.asideMediaSize</identifier>
+								</itemsProcConfig>
+							</config>
+						</TCEforms>
+					</settings.asideMediaSize>
 					<settings.readmoreEnabled>
 						<TCEforms>
 							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.readmore-enabled</label>
