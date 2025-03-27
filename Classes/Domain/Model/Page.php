@@ -58,6 +58,11 @@ class Page extends \Ps14\Foundation\Domain\Model\Page {
 	protected $url = '';
 
 	/**
+	 * @var string
+	 */
+	protected $target = '';
+
+	/**
 	 * Returns the abstractLong
 	 *
 	 * @return string $abstractLong
@@ -168,17 +173,20 @@ class Page extends \Ps14\Foundation\Domain\Model\Page {
 		$this->url = $url;
 	}
 
-	public function getLink(): string {
-		$contentObject = GeneralUtility::makeInstance(ContentObjectRenderer::class);
-		$pageLinkBuilder = GeneralUtility::makeInstance(PageLinkBuilder::class, $contentObject);
-
+	public function getTypolink(): mixed {
 		if(empty($this->url) === false) {
-			$link = $contentObject->typoLink_URL(['parameter' => $this->url]);
+			return $this->url;
 
 		} else {
-			$link = $contentObject->typoLink_URL(['parameter' => $this->uid]);
+			return $this->uid;
 		}
+	}
 
-		return $link;
+	public function getTarget(): string {
+		return $this->target;
+	}
+
+	public function setTarget(string $target): void {
+		$this->target = $target;
 	}
 }

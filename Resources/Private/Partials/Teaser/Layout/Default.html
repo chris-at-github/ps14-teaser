@@ -25,7 +25,7 @@
 <f:section name="CardContainer">
 	<ul class="card--container {additionalClass}">
 		<f:for each="{pages}" as="page">
-			<li class="card card--layout-1" data-uri-target="{f:uri.page(pageUid: page.uid)}">
+			<li class="card card--layout-1" data-uri-target="{f:uri.typolink(parameter: page.typolink)}">
 				<f:render section="Item" arguments="{page: page, record: record, settings: settings}" />
 			</li>
 		</f:for>
@@ -37,7 +37,7 @@
 	<f:render partial="Components/Card" section="Badges" arguments="{badges: page.badges}" />
 
 	<div class="card--body">
-		<f:render partial="Components/Card" section="Title" arguments="{title: page.teaserTitle, titleType: record.tx_foundation_elements_header, link: page.link}" />
+		<f:render partial="Components/Card" section="Title" arguments="{title: page.teaserTitle, titleType: record.tx_foundation_elements_header, link: '{f:uri.typolink(parameter: page.typolink)}'}" />
 
 		<f:if condition="{page.abstract}">
 			<f:render partial="Components/Card" section="Description" arguments="{description: page.abstract}" />
