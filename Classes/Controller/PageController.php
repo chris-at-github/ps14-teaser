@@ -74,6 +74,10 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 		// eigene Seite ausschliessen
 		$options['not']['records'] = [$GLOBALS['TSFE']->id];
 
+		if((int) $GLOBALS['TSFE']->page['sys_language_uid'] !== 0 && empty($GLOBALS['TSFE']->page['_PAGES_OVERLAY_UID']) === false) {
+			$options['not']['records'][] = $GLOBALS['TSFE']->page['_PAGES_OVERLAY_UID'];
+		}
+
 		// hide_nav Datensaetze per Default nicht anzeigen
 		if((int) $this->settings['hiddenEnabled'] !== 1) {
 			$options['hiddenEnabled'] = false;
