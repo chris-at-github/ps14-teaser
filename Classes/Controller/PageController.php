@@ -41,7 +41,7 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 
 		if($this->settings['source'] === 'pages' && empty($this->settings['pages']) === false) {
 
-			if($this->settings['pagesProcessing'] === 'subpages') {
+			if(isset($this->settings['pagesProcessing']) === true && $this->settings['pagesProcessing'] === 'subpages') {
 				$options['parent'] = GeneralUtility::trimExplode(',', $this->settings['pages'], true);
 
 			} else {
@@ -79,7 +79,7 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 		}
 
 		// hide_nav Datensaetze per Default nicht anzeigen
-		if((int) $this->settings['hiddenEnabled'] !== 1) {
+		if(isset($this->settings['hiddenEnabled']) === false || (int) $this->settings['hiddenEnabled'] !== 1) {
 			$options['hiddenEnabled'] = false;
 		}
 
@@ -93,7 +93,7 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 		$demand = $this->getDemand();
 		$pages = $this->pageRepository->findAllByOption($demand);
 
-		if($this->settings['source'] === 'pages' && $this->settings['pagesProcessing'] === 'pages') {
+		if($this->settings['source'] === 'pages' && isset($this->settings['pagesProcessing']) === true && $this->settings['pagesProcessing'] === 'pages') {
 			$pages = \Ps14\Foundation\Utilities\ArrayUtility::sortByField($pages, $demand['records'], function($value) {
 				if($value instanceof Page) {
 					return $value->getUid();
