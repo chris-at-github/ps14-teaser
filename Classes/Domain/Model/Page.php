@@ -68,6 +68,9 @@ class Page extends \Ps14\Foundation\Domain\Model\Page {
 	 * @return string $abstractLong
 	 */
 	public function getAbstractLong() {
+        if(empty($this->abstractLong) === true) {
+            return $this->abstract;
+        }
 		return $this->abstractLong;
 	}
 

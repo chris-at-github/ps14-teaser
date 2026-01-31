@@ -39,8 +39,8 @@
 	<div class="card--body">
 		<f:render partial="Components/Card" section="Title" arguments="{title: page.teaserTitle, titleType: record.tx_foundation_elements_header, link: '{f:uri.typolink(parameter: page.typolink)}'}" />
 
-		<f:if condition="{page.abstract}">
-			<f:render partial="Components/Card" section="Description" arguments="{description: page.abstract}" />
+		<f:if condition="{page.abstractLong}">
+			<f:render partial="Components/Card" section="Description" arguments="{description: page.abstractLong}" />
 		</f:if>
 	</div>
 </f:section>
