@@ -89,6 +89,11 @@ plugin.tx_ps14teaser {
 				aside = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.aside
 			}
 
+			abstractType {
+				default = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.abstract-type.default
+				long = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.abstract-type.long
+			}
+
 			asideAlignment {
 				left = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-alignment.left
 				right = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-alignment.right

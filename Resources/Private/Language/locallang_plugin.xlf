@@ -82,6 +82,15 @@
 			<trans-unit id="flexform.field.subpages-layout.columns">
 				<source>Columns</source>
 			</trans-unit>
+			<trans-unit id="flexform.field.abstract-type">
+				<source>Abstract Type</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.abstract-type.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.abstract-type.long">
+				<source>Long</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

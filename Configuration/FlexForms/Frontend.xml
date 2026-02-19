@@ -100,6 +100,21 @@
 							</config>
 						</TCEforms>
 					</settings.pages>
+					<settings.abstractType>
+						<TCEforms>
+							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.abstract-type</label>
+							<displayCond>FIELD:main.settings.source:=:pages</displayCond>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<itemsProcFunc>Ps14\Foundation\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<extension>Ps14Teaser</extension>
+									<identifier>plugin.abstractType</identifier>
+								</itemsProcConfig>
+							</config>
+						</TCEforms>
+					</settings.abstractType>
 					<settings.asideAlignment>
 						<TCEforms>
 							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-alignment</label>
